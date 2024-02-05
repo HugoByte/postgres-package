@@ -170,5 +170,5 @@ def run_query(plan, service, user, password, database, query):
         database=database,
     )
     return plan.exec(
-        service.name, recipe=ExecRecipe(command=["psql", url, "-c", query])
+        service.name, recipe=ExecRecipe(command=["psql", url, "-c", query, "-t", "-A"])
     )
